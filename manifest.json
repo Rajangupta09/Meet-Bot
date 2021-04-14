@@ -1,0 +1,13 @@
+{
+    "name": "G Bot",
+    "description": "Build an Extension!",
+    "version": "1.0",
+    "manifest_version": 3,
+    "icons": {"128": "img/meet_logo.svg"},
+    "action": {
+      "default_icon": "img/meet_logo.svg",
+      "default_popup": "popup.html"
+    },
+    "permissions": ["activeTab"]
+  }
+  
