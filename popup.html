@@ -47,65 +47,38 @@
         <div class="row">
             <form autocomplete="on" class="col s12">
                 <div id="form">
-                    <div class="row">
+                    <div class="meetgroup">
+                        <div class="row ">
                             <div class="input-field col s12">
                                 <input id="url" type="text" name="Url" required>
                                 <label for="url">Meeting Link</label>
                             </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s4">
-                            <input type="number" id="start-hour" min="0" max="23"  required value="9">
-                            <label for="start-hour">HH</label>
                         </div>
-                        <div class="input-field col s4">
-                            <input type="number" id="start-minute" min="0" max="59"  required value="30">
-                            <label for="start-minute">MM</label>
-                        </div>
-                        <div class="input-field col s4">
-                            <input type="number" id="duration" max="500" required value="60">
-                            <label for="duration">Duration</label>
-                            <span class="helper-text">(In Minute)</span>
+                        <div class="row">
+                            <div class="input-field col s4">
+                                <input type="number" id="start-hour" min="0" max="23"  required value="9">
+                                <label for="start-hour">HH</label>
+                            </div>
+                            <div class="input-field col s4">
+                                <input type="number" id="start-minute" min="0" max="59"  required value="30">
+                                <label for="start-minute">MM</label>
+                            </div>
+                            <div class="input-field col s4">
+                                <input type="number" id="duration" max="500" required value="60">
+                                <label for="duration">Duration</label>
+                                <span class="helper-text">(In Minute)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="update"></div>
                 <a class="btn-floating btn-large waves-effect  pulse waves-light btn-large cyan darken-4 right" id="add"><i class="material-icons">add</i></a>
+                <button class="btn waves-effect waves-light cyan darken-2 btn-large" type="submit" name="action" id="submitbtn">Submit<i class="material-icons right">send</i></button>
             </form>
-                <button class="btn waves-effect waves-light cyan darken-2 btn-large" type="submit" name="action">Submit
-                    <i class="material-icons right">send</i>
-                </button>
+               
         </div>
         <hr class="colored">
         <div class="data">
-            <h4>Recorded Time Table</h4>
-            <table class="centered">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Item Name</th>
-                        <th>Item Price</th>
-                    </tr>
-                </thead>
-        
-                <tbody>
-                    <tr>
-                        <td>Alvin</td>
-                        <td>Eclair</td>
-                        <td>$0.87</td>
-                    </tr>
-                    <tr>
-                        <td>Alan</td>
-                        <td>Jellybean</td>
-                        <td>$3.76</td>
-                    </tr>
-                    <tr>
-                        <td>Jonathan</td>
-                        <td>Lollipop</td>
-                        <td>$7.00</td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
 
 </body>
