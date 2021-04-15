@@ -8,6 +8,6 @@
       "default_icon": "img/meet_logo.svg",
       "default_popup": "popup.html"
     },
-    "permissions": ["activeTab"]
+    "permissions": ["storage"]
   }
   
