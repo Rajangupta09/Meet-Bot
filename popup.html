@@ -46,29 +46,31 @@
         <hr class="colored">
         <div class="row">
             <form autocomplete="on" class="col s12">
-                <div class="row">
-                        <div class="input-field col s12">
-                            <input id="url" type="text" name="Url" required>
-                            <label for="url">Meeting Link</label>
+                <div id="form">
+                    <div class="row">
+                            <div class="input-field col s12">
+                                <input id="url" type="text" name="Url" required>
+                                <label for="url">Meeting Link</label>
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <input type="number" id="start-hour" min="0" max="23"  required value="9">
+                            <label for="start-hour">HH</label>
                         </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s4">
-                        <input type="number" id="start-hour" min="0" max="23"  required value="9">
-                        <label for="start-hour">HH</label>
-                    </div>
-                    <div class="input-field col s4">
-                        <input type="number" id="start-minute" min="0" max="59"  required value="30">
-                        <label for="start-minute">MM</label>
-                    </div>
-                    <div class="input-field col s4">
-                        <input type="number" id="duration" max="500" required value="60">
-                        <label for="duration">Duration</label>
-                        <span class="helper-text">(In Minute)</span>
+                        <div class="input-field col s4">
+                            <input type="number" id="start-minute" min="0" max="59"  required value="30">
+                            <label for="start-minute">MM</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input type="number" id="duration" max="500" required value="60">
+                            <label for="duration">Duration</label>
+                            <span class="helper-text">(In Minute)</span>
+                        </div>
                     </div>
                 </div>
                 <div class="update"></div>
-                <a class="btn-floating btn-large waves-effect  pulse waves-light btn-large cyan darken-4 right"><i class="material-icons">add</i></a>
+                <a class="btn-floating btn-large waves-effect  pulse waves-light btn-large cyan darken-4 right" id="add"><i class="material-icons">add</i></a>
             </form>
                 <button class="btn waves-effect waves-light cyan darken-2 btn-large" type="submit" name="action">Submit
                     <i class="material-icons right">send</i>
@@ -107,6 +109,7 @@
         </div>
 
 </body>
+<script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/materialize.min.js"></script>
 <script src="js/popup.js"></script>
 
