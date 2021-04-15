@@ -9,7 +9,7 @@
     <link href="css/materialize.min.css"  rel="stylesheet"/>
     <style>
         body{
-            min-width: 500px;
+            min-width: 600px;
         }
         .info {
             font-size: 16px;
@@ -25,16 +25,22 @@
         .success{
             display: none;
         }
+        hr.colored {
+            border: 0;   /* in order to override TWBS stylesheet */
+            height: 5px;
+
+           background: linear-gradient(to right, rgba(196,222,138,1) 0%, rgba(196,222,138,1) 12.5%, rgba(245,253,212,1) 12.5%, rgba(245,253,212,1) 25%, rgba(255,208,132,1) 25%, rgba(255,208,132,1) 37.5%, rgba(242,122,107,1) 37.5%, rgba(242,122,107,1) 50%, rgba(223,157,185,1) 50%, rgba(223,157,185,1) 62.5%, rgba(192,156,221,1) 62.5%, rgba(192,156,221,1) 75%, rgba(95,156,217,1) 75%, rgba(95,156,217,1) 87.5%, rgba(94,190,227,1) 87.5%, rgba(94,190,227,1) 87.5%, rgba(94,190,227,1) 100%); /* W3C */
+        }
     </style>
 </head>
 <body>
     <nav>
-        <div class="nav-wrapper teal darken-2">
+        <div class="nav-wrapper cyan accent-4">
             <a href="#" class="brand-logo center">G-Bot</a>
         </div>
     </nav>
     
-    <div class="container first">
+    <div class="container">
         <div class="info">
             <ul class="browser-default">
                 <li>Enter the meeting link</li>
@@ -46,32 +52,69 @@
             </ul>
         </div>
 
-        <hr>
+        <hr class="colored">
         <div class="row">
             <form autocomplete="on" class="col s12">
-              <div class="row">
-                <div class="input-field col s12">
-                  <input id="url" type="text" class="form-control tname" name="teamName" required>
-                  <label for="url">Meeting Link</label>
+                <div class="row">
+                        <div class="input-field col s12">
+                            <input id="url" type="text" name="Url" required>
+                            <label for="url">Meeting Link</label>
+                        </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s4">
-                    <input type="number" id="start-hour" min="0" max="23"  required value="9">
-                  <label for="first_name">HH</label>
+                <div class="row">
+                    <div class="input-field col s4">
+                        <input type="number" id="start-hour" min="0" max="23"  required value="9">
+                        <label for="start-hour">HH</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input type="number" id="start-minute" min="0" max="59"  required value="30">
+                        <label for="start-minute">MM</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input type="number" id="duration" max="500" required value="60">
+                        <label for="duration">Duration</label>
+                        <span class="helper-text">(In Minute)</span>
+                    </div>
                 </div>
-                <div class="input-field col s4">
-                    <input type="number" id="start-minute" min="0" max="59"  required value="30">
-                  <label for="last_name">MM</label>
-                </div>
-                <div class="input-field col s4">
-                    <input type="number" id="duration"max="500" required value="60">
-                  <label for="last_name">Duration</label>
-                  <span class="helper-text">(In Minute)</span>
-                </div>
-              </div>
+                <div class="update"></div>
+                <a class="btn-floating btn-large waves-effect  pulse waves-light btn-large cyan darken-4 right"><i class="material-icons">add</i></a>
             </form>
-          </div>
+                <button class="btn waves-effect waves-light cyan darken-2 btn-large" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+        </div>
+        <hr class="colored">
+        <div class="data">
+            <h4>Recorded Time Table</h4>
+            <table class="centered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Item Name</th>
+                        <th>Item Price</th>
+                    </tr>
+                </thead>
+        
+                <tbody>
+                    <tr>
+                        <td>Alvin</td>
+                        <td>Eclair</td>
+                        <td>$0.87</td>
+                    </tr>
+                    <tr>
+                        <td>Alan</td>
+                        <td>Jellybean</td>
+                        <td>$3.76</td>
+                    </tr>
+                    <tr>
+                        <td>Jonathan</td>
+                        <td>Lollipop</td>
+                        <td>$7.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
 </body>
 <script src="js/materialize.min.js"></script>
 <script src="js/popup.js"></script>
