@@ -22,6 +22,7 @@ $('#submitbtn').on('click', function(e){
     var teams = $('.meetgroup');
     teams.each(function(){
         setData(n, $(this).find('#url').val(), $(this).find('#start-hour').val(), $(this).find('#start-minute').val(), $(this).find('#duration').val());
+        n+=1;
     })
     console.log(teams);
     chrome.storage.sync.set({objectMeet});

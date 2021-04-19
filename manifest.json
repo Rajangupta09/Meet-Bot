@@ -2,12 +2,17 @@
     "name": "G Bot",
     "description": "Build an Extension!",
     "version": "1.0",
-    "manifest_version": 3,
+    "manifest_version": 2,
     "icons": {"128": "img/meet_logo.svg"},
-    "action": {
+    "browser_action": {
       "default_icon": "img/meet_logo.svg",
       "default_popup": "popup.html"
     },
-    "permissions": ["storage"]
+    "permissions": ["storage", "alarms"],
+    "background": {
+    	"scripts": ["js/background.js"],
+      "persistent": false
+
+    }
   }
   
