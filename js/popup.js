@@ -8,7 +8,7 @@ $('#add').on('click', function(){
 var objectMeet = {};
 
 function setData(n,name,starth, startm, lengthOfClass){
-    var key = "team"+n; 
+    var key = "meet"+n; 
     objectMeet[key] =  {
         name: name,
         starth:starth,
@@ -19,14 +19,12 @@ function setData(n,name,starth, startm, lengthOfClass){
 $('#submitbtn').on('click', function(e){
     e.preventDefault();
     let n=0;
-    var teams = $('.meetgroup');
-    teams.each(function(){
+    var meets = $('.meetgroup');
+    meets.each(function(){
         setData(n, $(this).find('#url').val(), $(this).find('#start-hour').val(), $(this).find('#start-minute').val(), $(this).find('#duration').val());
         n+=1;
     })
-    console.log(teams);
     chrome.storage.sync.set({objectMeet});
-    console.log(objectMeet);
 });
 
 
