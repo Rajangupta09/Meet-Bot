@@ -25,6 +25,8 @@ $('#submitbtn').on('click', function(e){
         n+=1;
     })
     chrome.storage.sync.set({objectMeet});
+    $(".main").hide();
+    $('.alert').show();
 });
 
 
