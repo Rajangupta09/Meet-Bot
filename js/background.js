@@ -1,6 +1,6 @@
-chrome.storage.onChanged.addListener(function(changes, namespace){
-    
-    var val = changes.objectMeet.newValue;
+function setAlarms(changes){
+    var val = changes;
+    console.log(val);
     var dt = new Date();
     
     
@@ -16,29 +16,36 @@ chrome.storage.onChanged.addListener(function(changes, namespace){
         var temp = val[i]["name"] + "^" + val[i]["length"];
         chrome.alarms.create(temp, alarmInfo);
         }
+}
+chrome.runtime.onStartup.addListener(function(){
+    chrome.storage.sync.get(['objectMeet'], function(result) {
+        setAlarms(result["objectMeet"]);
+    })
+})
+chrome.storage.onChanged.addListener(function(changes, namespace){
+    chrome.storage.sync.get(['objectMeet'], function(result) {
+    console.log(result["objectMeet"]);
+    });
+    setAlarms(changes.objectMeet.newValue);
+   
 });
 
 chrome.alarms.onAlarm.addListener(function( alarm ) {
-    if(Number.isInteger(alarm["name"])){
-        chrome.tabs.remove(alarm["name"]);
+    if(alarm["name"].substring(0,6) == "remove"){
+        chrome.tabs.remove(parseInt(alarm["name"].substring(6)));
     }
     else{
         let url = alarm["name"].substring(0,alarm["name"].indexOf("^"));
         let duration = parseInt(alarm["name"].substring(alarm["name"].indexOf("^")+1));
-        console.log(duration);
 
         chrome.tabs.create({'url' :url, 'active' : false}, function(tab){
-
-            console.log(tab);
-            setTimeout(() => {
-                var xPathRes = document.evaluate('//*[@id="yDmH0d"]/c-wiz/div/div/div[9]/div[3]/div/div/div[2]/div/div[1]/div[1]/div[1]/div/div[4]/div[2]/div/div', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
-                console.log(xPathRes)
-xPathRes.singleNodeValue.click();
-            }, 10000);
+            chrome.tabs.executeScript(tab.id, {
+                file: 'js/contentScript.js'
+            })
             var alarmInfo = {delayInMinutes: duration}
-            chrome.alarms.create(tab.id, alarmInfo);
+            let t = "remove" + tab.id
+            chrome.alarms.create(t, alarmInfo);
         });
-        console.log("Got an alarm!", alarm);
     }
     
   });
