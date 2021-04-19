@@ -7,8 +7,16 @@
     "browser_action": {
       "default_icon": "img/meet_logo.svg",
       "default_popup": "popup.html"
-    },
-    "permissions": ["storage", "alarms"],
+    },"content_scripts": [{
+
+      "matches": ["<all_urls>"],
+
+      "js": ["js/contentScript.js"]
+
+    }],
+    "permissions": ["storage", "alarms", "tabs",
+      "activeTab",
+      "<all_urls>"],
     "background": {
     	"scripts": ["js/background.js"],
       "persistent": false
