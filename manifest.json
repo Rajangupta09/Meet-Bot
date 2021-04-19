@@ -1,6 +1,6 @@
 {
     "name": "G Bot",
-    "description": "Build an Extension!",
+    "description": "A Web Extension to Join Your Meetings on time!",
     "version": "0.0.1",
     "manifest_version": 2,
     "icons": {"128": "img/meet_logo.svg"},
