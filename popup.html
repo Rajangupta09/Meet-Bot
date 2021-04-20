@@ -10,6 +10,8 @@
     <style>
         body{
             min-width: 600px;
+            background-color : #202123;
+            color: #e57373;
         }
         .info {
             font-size: 16px;
@@ -52,12 +54,16 @@
         .closebtn:hover {
         color: black;
         }
+        label {
+            color : #e57373 !important;
+        }
     </style>
 </head>
 <body>
     <nav>
-        <div class="nav-wrapper cyan accent-4">
-            <a href="#" class="brand-logo center">G-Bot</a>
+        <div class="nav-wrapper red darken-1">
+        <img style="margin-left:30%" src="img/logo.png" height="60px">
+            <a href="#" class="brand-logo center center-align">G-Bot</a>
         </div>
     </nav>
     
@@ -76,7 +82,7 @@
                 <div id="form">
                     <div class="meetgroup">
                         <div class="row ">
-                            <div class="input-field col s12">
+                            <div class="input-field col s12 red-text">
                                 <input id="url" type="text" name="Url" required>
                                 <label for="url">Meeting Link</label>
                             </div>
@@ -99,8 +105,8 @@
                     </div>
                 </div>
                 <div class="update"></div>
-                <a class="btn-floating btn-large waves-effect  pulse waves-light btn-large cyan darken-4 right" id="add"><i class="material-icons">add</i></a>
-                <button class="btn waves-effect waves-light cyan darken-2 btn-large" type="submit" name="action" id="submitbtn">Submit<i class="material-icons right">send</i></button>
+                <a class="btn-floating btn-large waves-effect  pulse waves-light btn-large red darken-1 right" id="add"><i class="material-icons">add</i></a>
+                <button class="btn waves-effect waves-light red darken-1 btn-large" type="submit" name="action" id="submitbtn">Submit<i class="material-icons right">send</i></button>
             </form>
                
         </div>
